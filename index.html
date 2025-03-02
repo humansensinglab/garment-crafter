@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GarmentCrafter">
+  <meta name="keywords" content="Garment, Fashion, 3D, Reconstruction, generation, editing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GarmentCrafter</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GarmentCrafter: Progressive Novel View Synthesis
+            for Single-View 3D Garment Reconstruction and Editing</h1>
+          <div class="is-size-5 publication-authors">
+            
+            <span class="author-block">
+              Anonymous Authors
+            </span>
+
+            <!-- <span class="author-block">
+                <a href="https://czhang0528.github.io/">Cheng Zhang*</a><sup>1</sup>&nbsp&nbsp&nbsp
+            </span>
+
+            <span class="author-block">
+              <a href="https://harrywang355.github.io/">Yuanhao Wang*</a><sup>1</sup>&nbsp&nbsp&nbsp
+            </span>
+            
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/francisco-vicente-carrasco-32a508144/">Francisco Vicente Carrasco</a><sup>1</sup>&nbsp&nbsp&nbsp
+            </span>
+            
+            <span class="author-block">
+              <a href="https://sites.google.com/view/chengleiwu/">Chenglei Wu</a><sup>2</sup>&nbsp&nbsp&nbsp
+            </span>
+
+            <span class="author-block">
+              <a href="https://is.mpg.de/~jyang">Jinlong Yang</a><sup>2</sup>
+            </span>
+
+            <br> 
+            
+            <span class="author-block">
+              <a href="https://thabobeeler.com/">Thabo Beeler</a><sup>2</sup>&nbsp&nbsp&nbsp
+            </span>
+            
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~ftorre/">Fernando De la Torre</a><sup>1</sup>
+            </span> -->
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <span class="author-block"><sup>2</sup>Google AR</span> -->
+          </div>
+
+          <br>
+
+          <!-- <div>
+            <h1 class="title">SIGGRAPH Asia 2024</h1>
+          </div> -->
+          
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2410.01801"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- arxiv PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.01801"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/humansensinglab/fabric-diffusion"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                  </a>
+              </span> -->
+              <!-- Demo Link. -->
+        <!--       <span class="link-block">
+                  <a href="#"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-edit"></i>
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span> -->
+              <!-- Dataset Link. -->
+<!--               <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span> -->
+              <!-- <span class="link-block">
+                <a href="#video"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Poster Link. -->
+              <!-- <span class="link-block">
+                <a href="./iti-gen/static/images/iti-gen_poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-file"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Teaser video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="column">
+            <video id="teaser" autoplay muted loop playsinline height="100%">
+              <source src="videos/teaser.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose MeshLRM, a novel LRM-based approach that can reconstruct a high-quality mesh 
+              from merely four input images in less than one second. Different from previous large reconstruction 
+              models (LRMs) that focus on NeRF-based reconstruction, MeshLRM incorporates differentiable mesh 
+              extraction and rendering within the LRM framework. This allows for end-to-end mesh reconstruction 
+              by fine-tuning a pre-trained NeRF LRM with mesh rendering. Moreover, we improve the LRM architecture 
+              by simplifying several complex designs in previous LRMs. MeshLRM's NeRF initialization is 
+              sequentially trained with low- and high-resolution images; this new LRM training strategy enables 
+              significantly faster convergence and thereby leads to better quality with less compute. Our approach 
+              achieves state-of-the-art mesh reconstruction from sparse-view inputs and also allows for many 
+              downstream applications, including text-to-3D and single-image-to-3D generation.
+            </p><br>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="column">
+            <img src="videos/pipeline.png" alt="pipeline" style="width:100%">
+          </div>
+        </div>
+      </div>
+      <p><b>Pipeline:</b> The model architecture of MeshLRM. The images are first patchified to tokens.
+        The transformer takes the concatenated image and triplane tokens as input. The output
+        triplane tokens are upsampled with the unpatchifying operator while the output image
+        tokens are dropped (not drawn in figure). With two tiny MLPs for density and color
+        decoding, this model supports both the volumetric rendering and the DiffMC
+        fine-tuning. We render our final mesh output on the rightmost of the figure.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="column">
+            <h2 class="title is-5">GSO dataset
+            </h2>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_7.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/input_72.jpg" alt="input_72" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/mesh_72.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_72.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_33.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/input_104.png" alt="input_104" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/mesh_104.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_104.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_36.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/input_751.png" alt="input_751" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/mesh_751.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_751.ply">Download Mesh</a>
+            </div>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_20.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/input_60.jpg" alt="input_60" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/mesh_60.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_60.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_23.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/input_131.jpg" alt="input_131" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/mesh_131.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_131.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_24.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/input_183.jpg" alt="input_183" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/mesh_183.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_183.ply">Download Mesh</a>
+            </div>
+          </div>
+
+          <div class="column">
+            <h2 class="title is-5">ABO dataset
+            </h2>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_12.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/ainput_21.jpg" alt="input_21" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/amesh_21.glb">Interactive Viewer</a> | 
+              <a href="plys/amesh_21.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_14.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/ainput_41.jpg" alt="input_41" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/amesh_41.glb">Interactive Viewer</a> | 
+              <a href="plys/amesh_41.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_15.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/ainput_96.jpg" alt="input_96" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/amesh_96.glb">Interactive Viewer</a> | 
+              <a href="plys/amesh_96.ply">Download Mesh</a>
+            </div>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_25.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/ainput_722.jpg" alt="input_722" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/amesh_722.glb">Interactive Viewer</a> | 
+              <a href="plys/amesh_722.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_26.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/ainput_901.jpg" alt="input_901" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/amesh_901.glb">Interactive Viewer</a> | 
+              <a href="plys/amesh_901.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_27.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/ainput_698.jpg" alt="input_698" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/amesh_698.glb">Interactive Viewer</a> | 
+              <a href="plys/amesh_698.ply">Download Mesh</a>
+            </div>
+          </div>
+
+          <div class="column">
+            <h2 class="title is-5">OpenIllumination dataset
+            </h2>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_28.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/oinput_9.jpg" alt="oinput_9" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/omesh_9.glb">Interactive Viewer</a> | 
+              <a href="plys/omesh_9.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_29.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/oinput_30.jpg" alt="oinput_30" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/omesh_30.glb">Interactive Viewer</a> | 
+              <a href="plys/omesh_30.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_32.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/oinput_60.jpg" alt="oinput_60" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/omesh_60.glb">Interactive Viewer</a> | 
+              <a href="plys/omesh_60.ply">Download Mesh</a>
+            </div>
+          </div>
+
+          <div class="column">
+            <h2 class="title is-5">Text-to-3D</h2>
+            <p>Note: We use Instant3D for text-to-multiview generation.</p>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_3.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/tinput_518.jpg" alt="tinput_518" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/tmesh_518.glb">Interactive Viewer</a> | 
+              <a href="plys/tmesh_518.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_4.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/tinput_195.jpg" alt="tinput_195" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/tmesh_195.glb">Interactive Viewer</a> | 
+              <a href="plys/tmesh_195.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_16.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/tinput_544.jpg" alt="tinput_544" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/tmesh_544.glb">Interactive Viewer</a> | 
+              <a href="plys/tmesh_544.ply">Download Mesh</a>
+            </div>
+          </div>
+
+          <div class="column">
+            <h2 class="title is-5">Image-to-3D</h2>
+            <p>Note: We use Zero123++ for image-to-multiview generation.</p>
+          </div>
+
+          <div class="columns is-1 is-multiline is-mobile">
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_0.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/winput_2.jpg" alt="winput_2" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/wmesh_2.glb">Interactive Viewer</a> | 
+              <a href="plys/wmesh_2.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_1.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/winput_31.jpg" alt="winput_31" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/wmesh_31.glb">Interactive Viewer</a> | 
+              <a href="plys/wmesh_31.ply">Download Mesh</a>
+            </div>
+
+            <div class="column pb-0 mb-0 is-one-third">
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="videos/demo_13.mp4" type="video/mp4">
+              </video>
+              <img src="inputs/winput_1.jpg" alt="winput_1" style="width:100%">
+              <a href="mesh_viewer.html?model=glbs/wmesh_1.glb">Interactive Viewer</a> | 
+              <a href="plys/wmesh_1.ply">Download Mesh</a>
+            </div>
+          </div>
+
+
+        </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{wei2024meshlrm,
+        title={MeshLRM: Large Reconstruction Model for High-Quality Mesh},
+        author={Wei, Xinyue and Zhang, Kai and Bi, Sai and Tan, Hao and Luan, Fujun and Deschaintre, Valentin and Sunkavalli, Kalyan and Su, Hao and Xu, Zexiang},
+        journal={arXiv preprint arXiv:2404.12385},
+        year={2024}
+      }
+      
+      </code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              We thank the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> team for providing this
+              amazing website template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
