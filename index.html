@@ -196,16 +196,18 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose MeshLRM, a novel LRM-based approach that can reconstruct a high-quality mesh 
-              from merely four input images in less than one second. Different from previous large reconstruction 
-              models (LRMs) that focus on NeRF-based reconstruction, MeshLRM incorporates differentiable mesh 
-              extraction and rendering within the LRM framework. This allows for end-to-end mesh reconstruction 
-              by fine-tuning a pre-trained NeRF LRM with mesh rendering. Moreover, we improve the LRM architecture 
-              by simplifying several complex designs in previous LRMs. MeshLRM's NeRF initialization is 
-              sequentially trained with low- and high-resolution images; this new LRM training strategy enables 
-              significantly faster convergence and thereby leads to better quality with less compute. Our approach 
-              achieves state-of-the-art mesh reconstruction from sparse-view inputs and also allows for many 
-              downstream applications, including text-to-3D and single-image-to-3D generation.
+                We introduce GarmentCrafter, a new approach to enable non-professional users to create and modify 
+                3D garments from a single-view image. While recent advances in image generation have facilitated 
+                2D garment design, creating and editing 3D garments remains challenging for non-professional users. 
+                Existing methods for single-view 3D reconstruction often rely on pre-trained generative models to 
+                hallucinate novel views conditioning on the reference image and camera pose, yet they lack cross-view 
+                consistency, failing to capture the internal relationships across different views. In this paper, we 
+                tackle this challenge through progressive depth prediction and image warping to approximate novel views. 
+                Subsequently, we train a multi-view diffusion model to complete occluded and unknown clothing regions, 
+                informed by the evolving camera pose. By jointly inferring RGB and depth, GarmentCrafter enforces inter-view 
+                coherence and reconstructs precise geometries and fine details. Extensive experiments demonstrate that our 
+                method achieves superior visual fidelity and inter-view coherence compared to state-of-the-art single-view 
+                3D garment reconstruction methods. Our model will be publicly available.
             </p><br>
           </div>
         </div>
@@ -220,12 +222,7 @@
           </div>
         </div>
       </div>
-      <p><b>Pipeline:</b> The model architecture of MeshLRM. The images are first patchified to tokens.
-        The transformer takes the concatenated image and triplane tokens as input. The output
-        triplane tokens are upsampled with the unpatchifying operator while the output image
-        tokens are dropped (not drawn in figure). With two tiny MLPs for density and color
-        decoding, this model supports both the volumetric rendering and the DiffMC
-        fine-tuning. We render our final mesh output on the rightmost of the figure.</p>
+      <p><b>Pipeline:</b> The model architecture of GarmentCrafter</p>
     </div>
   </section>
 
@@ -235,18 +232,21 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <div class="column">
-            <h2 class="title is-5">GSO dataset
+            <h2 class="title is-5">Image to 3D
             </h2>
           </div>
 
           <div class="columns is-1 is-multiline is-mobile">
             <div class="column pb-0 mb-0 is-one-third">
+              <img src="./assets/recon_cases/z0474/z0474.png" alt="z0474" style="width:33%">
               <video id="teaser" autoplay muted loop playsinline height="100%">
-                <source src="videos/demo_7.mp4" type="video/mp4">
+                <source src="assets/recon_cases/z0474/video.mp4" type="video/mp4">
               </video>
-              <img src="inputs/input_72.jpg" alt="input_72" style="width:100%">
-              <a href="mesh_viewer.html?model=glbs/mesh_72.glb">Interactive Viewer</a> | 
-              <a href="plys/mesh_72.ply">Download Mesh</a>
+              <video id="teaser" autoplay muted loop playsinline height="100%">
+                <source src="assets/recon_cases/z0474/video_mesh.mp4" type="video/mp4">
+              </video>
+              <!-- <a href="mesh_viewer.html?model=glbs/mesh_72.glb">Interactive Viewer</a> | 
+              <a href="plys/mesh_72.ply">Download Mesh</a> -->
             </div>
 
             <div class="column pb-0 mb-0 is-one-third">
