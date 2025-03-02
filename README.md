@@ -1,1 +1,1 @@
-# garment-crafter
+# GarmentCrafter
