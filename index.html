@@ -171,21 +171,18 @@
   </div>
 </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <!-- Teaser video. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-          <div class="column">
-            <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src="videos/teaser.mp4" type="video/mp4">
-            </video> -->
-            <img src="assets/images/fig1.jpg" alt="fig1" style="width:100%">
-          </div>
-        </div>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+            <img src="assets/images/fig1.jpg" width="1000px">
       </div>
+       <h2 class="subtitle has-text-centered">
+        From a real-world clothing image, GarmentCrafter synthesizes high-quality novel views, enabling the reconstruction of garment meshes with accurate geometry and rich detail. Additionally, users can easily apply 2D edits (e.g., modifying parts or surface details) using off-the-shelf tools on a single image, and GarmentCrafter seamlessly applies these edits across the 3D model with multi-view consistency.
+       </h2>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -221,7 +218,8 @@
           </div>
         </div>
       </div>
-      <p><b>Pipeline:</b> The model architecture of GarmentCrafter</p>
+      <p><b>Pipeline:</b>Given a garment image, our method performs depth-aware novel view synthesis along a predefined zigzag camera trajectory. For each camera rotation from &pi;<sub>i-1</sub> to &pi;<sub>i</sub>, we project the current point cloud P<sub>i-1</sub> into the image space based on camera pose &pi;<sub>i</sub>, resulting in incomplete RGB and depth images. Our diffusion model completes the RGB image using the warped view, input image, and camera pose as conditions, while a depth completion network refines the depth map based on the completed RGB, warped depth, and camera pose. The re-projected point cloud P'<sub>i</sub> is then merged with P<sub>i-1</sub> to produce an updated point cloud P<sub>i</sub>. This iterative process continues until a full 3D representation of the garment is achieved.
+      </p>
     </div>
   </section>
 
