@@ -241,15 +241,19 @@
       </div>
       <!--/ Abstract. -->
     </div>
+
+    <br>
+
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
+          <h2 class="title is-3">Progressive Novel View Farmework</h2>
           <div class="column">
             <img src="assets/images/pipeline.jpg" alt="pipeline" style="width:100%">
           </div>
         </div>
       </div>
-      <p><b>Pipeline:</b>Given a garment image, our method performs depth-aware novel view synthesis along a predefined zigzag camera trajectory. For each camera rotation from &pi;<sub>i-1</sub> to &pi;<sub>i</sub>, we project the current point cloud P<sub>i-1</sub> into the image space based on camera pose &pi;<sub>i</sub>, resulting in incomplete RGB and depth images. Our diffusion model completes the RGB image using the warped view, input image, and camera pose as conditions, while a depth completion network refines the depth map based on the completed RGB, warped depth, and camera pose. The re-projected point cloud P'<sub>i</sub> is then merged with P<sub>i-1</sub> to produce an updated point cloud P<sub>i</sub>. This iterative process continues until a full 3D representation of the garment is achieved.
+      <p>Given a garment image, our method performs depth-aware novel view synthesis along a predefined zigzag camera trajectory. At each camera rotation, the current point cloud is projected into the image space, resulting in incomplete RGB and depth images. Our diffusion model completes the RGB image using the warped view, input image, and camera pose as conditions, while a depth completion network refines the depth map using the completed RGB, warped depth, and camera pose. The re-projected point cloud is then merged with the previous one to produce an updated point cloud. This iterative process continues until a full 3D representation of the garment is achieved.
       </p>
     </div>
   </section>
@@ -260,7 +264,7 @@
       <div class="columns is-centered has-text-centered" style="padding-bottom: 50px;">
         <div class="column is-full-width">
           <div class="column">
-            <h2 class="title is-4">Image to 3D
+            <h2 class="title is-3">Image to 3D
             </h2>
           </div>
 
@@ -409,7 +413,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <div class="column">
-            <h2 class="title is-4">3D Garment Editing
+            <h2 class="title is-3">3D Garment Editing
             </h2>
           </div>
 
